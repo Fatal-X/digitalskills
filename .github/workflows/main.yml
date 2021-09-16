@@ -33,5 +33,4 @@ jobs:
           docker tag fatalrocket fatalskills.azurecr.io/fatalrocket:${GITHUB_SHA}
           docker push fatalskills.azurecr.io/fatalrocket:${GITHUB_SHA}
           docker run -d -p 80:80 fatalrocket
-          curl docker
           docker logout
