@@ -6,3 +6,4 @@ WORKDIR /var/www/html/RocketSrc
 COPY script.js .
 COPY index.html .
 COPY style.css .
+ENTRYPOINT ["nginx", "-g", "daemon off;"]
