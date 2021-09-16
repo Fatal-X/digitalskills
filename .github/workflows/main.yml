@@ -29,8 +29,8 @@ jobs:
       - name: Run build
         run: |
           docker login fatalskills.azurecr.io -u fatalskills -p "${{ secrets.REPO_PASS }}"
-          docker build -t fatalrocket:v1 .
-          docker tag fatalrocket fatalskills.azurecr.io/fatalrocket:v1
-          docker push fatalskills.azurecr.io/fatalrocket:v1
-          docker run -d -p 80:80 fatalrocket:v1
+          docker build -t fatalrocket .
+          docker tag fatalrocket fatalskills.azurecr.io/fatalrocket:${GITHUB_SHA}
+          docker push fatalskills.azurecr.io/fatalrocket:${GITHUB_SHA}
+          docker run -d -p 80:80 fatalrocket
           docker logout
